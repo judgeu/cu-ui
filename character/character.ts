@@ -30,7 +30,8 @@ module Character {
         }
         var hpRatio = curHP / maxHP;
         $healthBar.width(hpRatio * hpWidth);
-        $healthText.text(curHP + "/" + maxHP);
+        var hpPercent = Math.round(curHP / maxHP * 100);
+        $healthText.text(curHP + "/" + maxHP + ' | ' + hpPercent + '%');
         $name.text(name);
 
         var maxMana = 500;
