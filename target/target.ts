@@ -57,7 +57,8 @@ module Target {
         //	Figure out our health ratio and set the health bar to it
         var hpRatio = curHP / maxHP;
         $healthBar.width(hpRatio * hpWidth);
-        $healthText.text(curHP + "/" + maxHP);
+        var hpPercent = Math.round(curHP / maxHP * 100);
+        $healthText.text(curHP + "/" + maxHP + ' | ' + hpPercent + '%');
 
         //	Set the health bar text color based on if they are friendly
         if (isFriendly) {
